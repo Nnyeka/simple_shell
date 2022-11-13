@@ -19,7 +19,7 @@ int main(int ac, char **av)
 
 		_putchar("%s", start);
 		line = get_read_line();
-		args = get_split_line(line);
+		args = get_tokenize_line(line);
 		status = get_exec(args);
 
 		free(line);
