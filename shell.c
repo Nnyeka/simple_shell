@@ -9,17 +9,22 @@
 */
 int main(int ac, char **av)
 {
+	//run while loop in main entry point
 	while (true)
 	{
-		char *start = "| ";
+		char *start = "$ ";
 		char *line;
 
-		(void)ac; (void)av
+		(void)ac; (void)av;
 
-		printf("%s", start);
-		getline(&line, &n, stdin);
-		printf("%s\n, line");
+		_putchar("%s", start);
+		line = get_read_line();
+		args = get_split_line(line);
+		status = get_exec(args);
+
 		free(line);
-	}
+		free(args);
 
-}	return (0);
+		return (0);
+	}
+}

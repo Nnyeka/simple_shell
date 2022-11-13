@@ -13,5 +13,15 @@
 
 
 /* PROTOTYPES */
+int _putchar(char);
+char *get_read_line(void);
+char **get_split_line(char *line);
+int get_exec(char **args);
+int get_launch(char **args);
+
+/* Function Declarations for builtin shell commands:*/
+int get_exit(char **args);
+int get_help(char **args);
+int get_cd(cahr **args);
 
 #endif
