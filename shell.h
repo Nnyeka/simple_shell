@@ -15,7 +15,7 @@
 /* PROTOTYPES */
 int _putchar(char);
 char *get_read_line(void);
-char **get_split_line(char *line);
+char **get_tokenize_line(char *line);
 int get_exec(char **args);
 int get_launch(char **args);
 
