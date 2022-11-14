@@ -22,6 +22,6 @@ int get_launch(char **args);
 /* Function Declarations for builtin shell commands:*/
 int get_exit(char **args);
 int get_help(char **args);
-int get_cd(cahr **args);
+int get_cd(char **args);
 
 #endif

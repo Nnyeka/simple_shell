@@ -9,18 +9,23 @@
 */
 int main(int ac, char **av)
 {
-	//run while loop in main entry point
+	/*run while loop in main entry point*/
 	while (true)
 	{
 		char *start = "$ ";
 		char *line;
+		char **args;
 
 		(void)ac; (void)av;
 
-		_putchar("%s", start);
+		printf("%s", start);
 		line = get_read_line();
 		args = get_tokenize_line(line);
-		status = get_exec(args);
+		
+		if (args[0] != NULL)
+		{
+			get_exec(args);
+		}
 
 		free(line);
 		free(args);

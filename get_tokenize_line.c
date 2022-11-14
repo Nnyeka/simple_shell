@@ -1,5 +1,5 @@
 #include "shell.h"
-
+#define BUFSIZE 64
 /**
  * get_tokenize_line: to split a line to tokens
  * @line: the line to be splitted.
@@ -9,7 +9,7 @@
 
 char **get_tokenize_line(char *line)
 {
-	int bufsize[64], position = 0;
+	int bufsize = BUFSIZE, position = 0;
 	char **tokens = malloc(bufsize * sizeof(char*));
 	char *token;
 	const char *delim = " ";
@@ -20,7 +20,7 @@ char **get_tokenize_line(char *line)
 		exit(EXIT_FAILURE);
 	}
 	
-	token = strtok(line, LSH_TOK_DELIM);
+	token = strtok(line, delim);
 	while (token != NULL)
 	{
 		tokens[position] = token;

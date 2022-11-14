@@ -1,5 +1,5 @@
 #include "shell.h"
-
+#define BUFSIZE 1024
 /**
  * get_read_line - returns the lines from the stream input
  *
@@ -8,7 +8,7 @@
 
 char *get_read_line(void)
 {
-	char bufsize[1024];
+	int bufsize = BUFSIZE;
 	int position = 0;
 	char *buffer = malloc(sizeof(char) * bufsize);
 	int chr;
@@ -21,10 +21,10 @@ char *get_read_line(void)
 
 	while (true) 
 	{
-		//read a character
+		/*read a character*/
 		chr = getchar();
 
-		//if end of file, replace with with a null chr and return
+		/*if end of file, replace with with a null chr and return*/
 		if (chr == EOF || chr == '\n')
 		{
 			buffer[position] = '\0';
@@ -36,11 +36,11 @@ char *get_read_line(void)
 		}
 		position++;
 
-		//if buffer is exceeded, realloc
+		/*if buffer is exceeded, realloc*/
 		if (position >= bufsize)
 		{
-			bufsize += bufsize;
-			buffer = realloc(buffer, bufsize);
+			bufsize += BUFSIZE;
+			buffer = realloc(buffer, 1024);
 			if (!buffer)
 			{
 				perror("error: allocation error\n");
