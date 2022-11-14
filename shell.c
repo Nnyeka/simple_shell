@@ -16,12 +16,12 @@ int main(int ac, char **av)
 		char *line;
 		char **args;
 
-		(void)ac; (void)av;
+		(void)ac;
+		(void)av;
 
 		printf("%s", start);
 		line = get_read_line();
 		args = get_tokenize_line(line);
-		
 		if (args[0] != NULL)
 		{
 			get_exec(args);

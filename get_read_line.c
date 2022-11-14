@@ -13,13 +13,13 @@ char *get_read_line(void)
 	char *buffer = malloc(sizeof(char) * bufsize);
 	int chr;
 
-	if (!buffer) 
+	if (!buffer)
 	{
 		perror("error: falled to allocate buffer\n");
 		exit(EXIT_FAILURE);
 	}
 
-	while (true) 
+	while (true)
 	{
 		/*read a character*/
 		chr = getchar();
@@ -28,7 +28,7 @@ char *get_read_line(void)
 		if (chr == EOF || chr == '\n')
 		{
 			buffer[position] = '\0';
-			return buffer;
+			return (buffer);
 		}
 		else
 		{
@@ -49,5 +49,3 @@ char *get_read_line(void)
 		}
 	}
 }
-		
-
