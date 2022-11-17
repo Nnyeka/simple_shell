@@ -19,6 +19,9 @@ char **get_tokenize_line(char *line);
 int get_exec(char **args);
 int get_launch(char **args);
 
+char *builtin_str[] = {"cd", "help", "exit"};
+int (*builtin_func[]) (char **) = {&get_cd, &get_help, &get_exit};
+
 /* Function Declarations for builtin shell commands:*/
 int get_exit(char **args);
 int get_help(char **args);
