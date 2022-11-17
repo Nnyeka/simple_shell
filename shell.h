@@ -23,5 +23,6 @@ int get_launch(char **args);
 int get_exit(char **args);
 int get_help(char **args);
 int get_cd(char **args);
+int lsh_num_builtins(void);
 
 #endif
