@@ -44,6 +44,10 @@ int get_help(char **args)
 {
 	int i;
 
+	if (args[1] == NULL)
+	{
+		return (1);
+	}
 	printf("the help section\n");
 	printf("Type program names and arguments, and hit enter.\n");
 	printf("The following are built in:\n");
@@ -58,11 +62,15 @@ int get_help(char **args)
 /**
  * get_exit - to exit
  * @args: arguments
- * Return: to return 1
+ * Return: to return 0
  */
 
 int get_exit(char **args)
 {
+	if (args[1] == NULL)
+	{
+		return (1);
+	}
 	return (0);
 }
 
