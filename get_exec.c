@@ -1,5 +1,6 @@
 #include "shell.h"
 
+int (*builtin_func[]) (char **) = {&get_cd, &get_help, &get_exit};
 /**
  * lsh_num_builtins - to return the builtins
  *
